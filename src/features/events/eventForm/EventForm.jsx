@@ -1,9 +1,12 @@
 import cuid from 'cuid';
-import React, { useState} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Form, Header, Segment, Container } from 'semantic-ui-react';
+import { Button, Header, Segment, Container } from 'semantic-ui-react';
 import { updateEvent, createEvent } from '../eventActions';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import MyTextInput from '../../../app/common/form/MyTextInput';
 
 function EventForm() {
     const navigate = useNavigate();
@@ -19,14 +22,25 @@ function EventForm() {
         city: '',
         venue: '',
         date: ''
-    }
+    };
 
-    const [values, setValues]=useState(initialValues);
+    const validationSchema = Yup.object({
+        title: Yup.string().required('You must provide a title'),
+        category: Yup.string().required('You must provide a category'),
+        description: Yup.string().required('You must provide a description'),
+        city: Yup.string().required('You must provide a city'),
+        venue: Yup.string().required('You must provide a venue'),
+        date: Yup.string().required('You must provide a date')
+    })
 
-    console.log(selectedEvent);
-
-    function handleFormSubmit() {
-        selectedEvent 
+    
+  return (
+    <Container className='main'>
+    <Segment clearing>
+        <Formik
+        initialValues={initialValues}
+        onSubmit={(values) => {
+            selectedEvent 
         ? dispatch(updateEvent({...selectedEvent, ...values})) 
         : dispatch(createEvent({
             ...values, 
@@ -35,82 +49,26 @@ function EventForm() {
             attendees: [], 
             hostPhotoURL: '/assets/user.png'
         }));
-        navigate('/events');   
-    };
-
-    function handleInputChange(e) {
-        const {name, value} = e.target;
-        setValues({...values, [name]: value})
-    };
-    
-  return (
-    <Container className='main'>
-    <Segment clearing>
-        <Header content={selectedEvent ? 'Edit the event' : 'Create new event'} />
-        <Form onSubmit={handleFormSubmit}>
-            <Form.Field>
-                <input 
-                type='text' 
-                name='title'
-                placeholder='Event title' 
-                value={values.title}
-                onChange={(e) => handleInputChange(e)}
-                />
-            </Form.Field>
-            <Form.Field>
-                <input 
-                type='text' 
-                placeholder='Category'
-                name='category'
-                value={values.category}
-                onChange={(e) => handleInputChange(e)}
-
-                />
-            </Form.Field>
-            <Form.Field>
-                <input 
-                type='text' 
-                placeholder='Description'
-                name='description'
-                value={values.description}
-                onChange={(e) => handleInputChange(e)}
-                />
-            </Form.Field>
-            <Form.Field>
-                <input 
-                type='text' 
-                placeholder='City'
-                value={values.city}
-                onChange={(e) => handleInputChange(e)}
-                name='city'
-                />
-            </Form.Field>
-            <Form.Field>
-                <input 
-                type='text' 
-                placeholder='Venue'
-                value={values.venue}
-                onChange={(e) => handleInputChange(e)}
-                name='venue'
-                />
-            </Form.Field>
-            <Form.Field>
-                <input 
-                type='date' 
-                placeholder='Date'
-                value={values.date}
-                onChange={(e) => handleInputChange(e)}
-                name='date'
-                />
-            </Form.Field>
+        navigate('/events'); 
+        }}
+        validationSchema={validationSchema}
+        >
+            <Form className='ui form'>
+            <Header sub color='teal' content='Event Details'/>
+            <MyTextInput name='title' placeholder='Event title' />
+            <MyTextInput name='category' placeholder='Category'/>
+            <MyTextInput name='description' placeholder='Description'/>
+            <Header sub color='teal' content='Event Location Details' />
+            <MyTextInput name='city' placeholder='City'/>
+            <MyTextInput name='venue' placeholder='Venue'/>
+            <MyTextInput name='date' placeholder='Event Date' type='date'/>
             <Button type='submit' floated='right' positive content='Submit' />
             <Button type='submit' floated='right'  content='Cancel' as={Link} to='/events' />
         </Form>
-    
+        </Formik>
     </Segment>
     </Container>
-    
-  )
+  );
 }
 
 export default EventForm;
