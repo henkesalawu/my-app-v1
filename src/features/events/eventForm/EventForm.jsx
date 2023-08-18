@@ -1,14 +1,16 @@
 import cuid from 'cuid';
 import React, { useState} from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Button, Form, Header, Segment, Container } from 'semantic-ui-react';
+import { updateEvent, createEvent } from '../eventActions';
 
-function EventForm({
-    setFormOpen, 
-    setEvents, 
-    createEvent, 
-    selectedEvent, 
-    updateEvent}) {
+function EventForm() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const {id} = useParams();
+    const selectedEvent = useSelector(state => 
+        state.event.events.find(e => e.id === id))
 
     const initialValues = selectedEvent ?? {
         title: '',
@@ -25,18 +27,21 @@ function EventForm({
 
     function handleFormSubmit() {
         selectedEvent 
-        ? updateEvent({...selectedEvent, ...values}) 
-        : createEvent({...values, id: cuid(), hostedBy: 'Bob', attendees: [], hostPhotoURL: '/assets/user.png'});
-        
-        setFormOpen(false);
-    }
+        ? dispatch(updateEvent({...selectedEvent, ...values})) 
+        : dispatch(createEvent({
+            ...values, 
+            id: cuid(), 
+            hostedBy: 'Bob', 
+            attendees: [], 
+            hostPhotoURL: '/assets/user.png'
+        }));
+        navigate('/events');   
+    };
 
     function handleInputChange(e) {
         const {name, value} = e.target;
         setValues({...values, [name]: value})
-        
-
-    }
+    };
     
   return (
     <Container className='main'>

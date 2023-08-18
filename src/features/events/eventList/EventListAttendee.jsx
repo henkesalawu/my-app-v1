@@ -9,4 +9,4 @@ function EventListAttendee({attendee}) {
   )
 }
 
-export default EventListAttendee
+export default EventListAttendee;
