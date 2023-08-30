@@ -17,15 +17,23 @@ function NavBar({setFormOpen}) {
     <Menu inverted fixed='top'>
     <Container>
       <Menu.Item as={NavLink} exact to='/' header>
-        <img src="/assets/logo.png" alt='logo' style={{marginRight: 15}}/>
-        Re-events
+        <img src="/assets/meramaidlogo.png" alt='logo' style={{marginRight: 15}}/>
+        Wanda Henke-Salawu
       </Menu.Item>
-      <Menu.Item as={NavLink} to='/events' name='Events'/>
-      <Menu.Item as={NavLink} to='/sandbox' name='Sandbox'/>
+      <Menu.Item as={NavLink} to='/about' name='About'/>
+      <Menu.Item as={NavLink} to='/projects' name='Projects'/>
+      <Menu.Item as={NavLink} to='/diy' name='DIY'/>
+      <Menu.Item as={NavLink} to='/hobby' name='Hobby'/>
+
       {authenticated &&
+        <>
+      <Menu.Item as={NavLink} to='/events' name='Events'/>
+      <Menu.Item as={NavLink} to='/contacts' name='Contacts'/>
       <Menu.Item as={NavLink} to='/createEvent'>
-        <Button positive inverted content='Create Event' />
-      </Menu.Item> }
+        <Button positive inverted content='Add Event' />
+      </Menu.Item>
+      </>
+      }
       {authenticated 
       ? <SignedInMenu 
       setAuthenticated={setAuthenticated}

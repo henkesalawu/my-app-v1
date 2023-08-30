@@ -5,7 +5,8 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from '../../features/home/HomePage';
 import EventDetailedPage from '../../features/events/eventDetailed/EventDetailedPage';
 import EventForm from '../../features/events/eventForm/EventForm';
-import Sandbox from '../../features/sandox/Sandbox';
+import ContactsPage from '../../features/contacts/ContactsPage';
+import Dashboard from '../../features/dashboard/Dashboard';
 
 function App() {
   const {key, pathname} = useLocation();
@@ -15,8 +16,9 @@ function App() {
     {pathname !== '/' && <NavBar />}
     <Routes>
     <Route exact path='/' element={<HomePage/>}/>
+    <Route exact path='/home' element={<Dashboard/>}/>
     <Route path='/events' element={<EventDashboard />}/>
-    <Route path='/sandbox' element={<Sandbox/>}/>
+    <Route path='/contacts' element={<ContactsPage/>}/>
 
     <Route path='/events/:id' element={<EventDetailedPage/>}/>
     <Route path='/createEvent' element={<EventForm/>}/>

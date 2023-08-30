@@ -8,10 +8,10 @@ function HomePage() {
     <Segment inverted textAlign='center' vertical className='masthead'>
         <Container>
         <Header as='h1' inverted >
-            <Image size='massive' src='/assets/logo.png' style={{marginBottom: 12}} />
-            Re-events
+            <Image size='massive' src='/assets/mermaidlogo.png' style={{marginBottom: 12}} />
+            Wanda Henke-Salawu
         </Header>
-        <Button as={Link} to='/events' size='huge' inverted>
+        <Button as={Link} to='/home' size='huge' inverted>
             Get started
             <Icon name='right arrow' inverted />
         </Button>
