@@ -7,6 +7,7 @@ import EventDetailedPage from '../../features/events/eventDetailed/EventDetailed
 import EventForm from '../../features/events/eventForm/EventForm';
 import ContactsPage from '../../features/contacts/ContactsPage';
 import Dashboard from '../../features/dashboard/Dashboard';
+import ContactForm from '../../features/contacts/ContactForm';
 
 function App() {
   const {key, pathname} = useLocation();
@@ -22,7 +23,10 @@ function App() {
 
     <Route path='/events/:id' element={<EventDetailedPage/>}/>
     <Route path='/createEvent' element={<EventForm/>}/>
-    <Route path='/manage/:id' element={<EventForm/>} key={key}/>    
+    <Route path='/manage/:id' element={<EventForm/>} key={key}/>
+    <Route path='/update/:id' element={<ContactForm/>} key={key}/>
+    <Route path='/addContact' element={<ContactForm />}/>
+
     </Routes>
    </>
   );

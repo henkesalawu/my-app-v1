@@ -17,7 +17,7 @@ function NavBar({setFormOpen}) {
     <Menu inverted fixed='top'>
     <Container>
       <Menu.Item as={NavLink} exact to='/' header>
-        <img src="/assets/meramaidlogo.png" alt='logo' style={{marginRight: 15}}/>
+        <img src="/assets/mermaidlogo.png" alt='logo' style={{marginRight: 15}}/>
         Wanda Henke-Salawu
       </Menu.Item>
       <Menu.Item as={NavLink} to='/about' name='About'/>
