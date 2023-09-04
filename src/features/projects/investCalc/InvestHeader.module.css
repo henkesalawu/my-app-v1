@@ -1,0 +1,16 @@
+.investheader {
+    text-align: center;
+    margin: 3rem auto;
+  }
+  
+  
+  .investheader img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+    background-color: transparent;
+  }
+  
+  .investheader h1 {
+    font-size: 1.5rem;
+  }

@@ -6,8 +6,17 @@ import HomePage from '../../features/home/HomePage';
 import EventDetailedPage from '../../features/events/eventDetailed/EventDetailedPage';
 import EventForm from '../../features/events/eventForm/EventForm';
 import ContactsPage from '../../features/contacts/ContactsPage';
-import Dashboard from '../../features/dashboard/Dashboard';
+import HomeDashboard from '../../features/dashboard/HomeDashboard';
 import ContactForm from '../../features/contacts/ContactForm';
+import Projects from '../../features/projects/Projects';
+import InvestCalc from '../../features/projects/investCalc/InvestCalc';
+import UserApp from '../../features/projects/userApp/UserApp'
+import ExpenseApp from '../../features/projects/expensesApp/ExpenseApp';
+import WeatherApp from '../../features/projects/weatherApp/WeatherApp';
+import EmployeesApp from '../../features/projects/employees/EmployeesApp';
+import EmployeesAdd from '../../features/projects/employees/EmployeesAdd';
+import EmployeesEdit from '../../features/projects/employees/EmployeesEdit';
+import Hobby from '../../features/projects/hobby/Hobby';
 
 function App() {
   const {key, pathname} = useLocation();
@@ -17,9 +26,19 @@ function App() {
     {pathname !== '/' && <NavBar />}
     <Routes>
     <Route exact path='/' element={<HomePage/>}/>
-    <Route exact path='/home' element={<Dashboard/>}/>
+    <Route exact path='/home' element={<HomeDashboard/>}/>
     <Route path='/events' element={<EventDashboard />}/>
     <Route path='/contacts' element={<ContactsPage/>}/>
+    <Route path='/projects' element={<Projects />}/>
+    <Route path='/invest' element={<InvestCalc /> }/>
+    <Route path='/userapp' element={<UserApp />}/>
+    <Route path='/expenses' element={<ExpenseApp />}/>
+    <Route path='/weather' element={<WeatherApp />}/>
+    <Route path='/employees' element={<EmployeesApp />}/>
+    <Route path='/employees/edit' element={<EmployeesEdit />}/>
+    <Route path='/employees/create' element={<EmployeesAdd />}/>
+    <Route path='/hobby' element={<Hobby />}/>
+
 
     <Route path='/events/:id' element={<EventDetailedPage/>}/>
     <Route path='/createEvent' element={<EventForm/>}/>
