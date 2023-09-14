@@ -5,7 +5,7 @@ import ContactPicker from './ContactPicker';
 import { Formik, Form } from 'formik';
 import MyTextInput from '../../app/common/form/MyTextInput';
 import { Link, useParams } from 'react-router-dom';
-import { updateApp, createApp } from './contactsRedux/appActions';
+import { createApp } from './contactsRedux/appActions';
 import cuid from 'cuid';
 
 function AppointmentForm({contacts}) {

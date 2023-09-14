@@ -1,8 +1,8 @@
-import {sampleData} from '../../app/api/sampleData';
+import {eventsData} from '../../app/api/eventsData';
 import { CREATE_EVENT, DELETE_EVENT, UPDATE_EVENT } from './eventConstants';
 
 const initialState = {
-    events: sampleData
+    events: eventsData
 }
 
 export default function eventReducer(state = initialState, {type, payload}) {

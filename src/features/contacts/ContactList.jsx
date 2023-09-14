@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink} from "react-router-dom";
-import { Button, Table, Icon} from 'semantic-ui-react';
+import { Table} from 'semantic-ui-react';
 import ContactItem from "./ContactItem";
 
 export const ContactList = ({contacts}) => {

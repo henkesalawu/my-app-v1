@@ -3,7 +3,7 @@ import './Music.css';
 import DisplayTrack from './DisplayTrack';
 import MusicControls from './MusicControls';
 import ProgressBar from './ProgressBar';
-import tracks from '../../../../app/api/data/tracks';
+import tracks from '../../../../app/api/musicData/tracks';
 
 
 function Music() {

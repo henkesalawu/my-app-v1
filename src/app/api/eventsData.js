@@ -1,4 +1,4 @@
-export const sampleData = [
+export const eventsData = [
     {
         id: '1',
         title: 'Ayo Birthday Party',

@@ -7,6 +7,7 @@ function DisplayTrack({currentTrack, audioRef, setDuration, progressBarRef, hand
     setDuration(seconds);
     progressBarRef.current.max = seconds;
   };
+  console.log(currentTrack.thumbnail);
 
   return (
     <div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Image, Reveal, Icon, Grid } from 'semantic-ui-react';
 
 function ProjectItem(props) {
   return (

@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import { NavLink} from 'react-router-dom';
 import {Grid, Container, Button, Icon, Segment, Header} from 'semantic-ui-react';
 import {ContactList} from './ContactList.jsx';

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import {Button, Table} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Employees from "./Employees";
+import EMPLOYEES from "../../../app/api/employeesData";
 import {Link, useNavigate} from 'react-router-dom';
 import { Container } from "semantic-ui-react";
 
@@ -10,11 +10,11 @@ function EmployeesApp() {
     let navigate = useNavigate();
 
     const handleDelete = (id) => {
-        var index = Employees.map(function(e){
+        var index = EMPLOYEES.map(function(e){
             return e.id
         }).indexOf(id);
 
-        Employees.splice(index,1);
+        EMPLOYEES.splice(index,1);
 
         navigate('/employees')
     }
@@ -45,9 +45,9 @@ function EmployeesApp() {
                 </thead>
                 <tbody>
                     {
-                        Employees && Employees.length > 0
+                        EMPLOYEES && EMPLOYEES.length > 0
                         ? 
-                        Employees.map((item) => {
+                        EMPLOYEES.map((item) => {
                             return(
                                 <tr>
                                     <td>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {useNavigate } from "react-router-dom";
-import Employees from "./Employees";
+import EMPLOYEES from "../../../app/api/employeesData";
 
 function EmployeesEdit() {
     const [name,setName]=useState('');
@@ -11,14 +11,14 @@ function EmployeesEdit() {
 
     let navigate = useNavigate();
 
-    var index = Employees.map(function(e){
+    var index = EMPLOYEES.map(function(e){
         return e.id;
     }).indexOf(id);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let a = Employees[index];
+        let a = EMPLOYEES[index];
         a.Age = age;
         a.Name = name;
 

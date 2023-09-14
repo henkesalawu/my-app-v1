@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import {v4 as uuid} from 'uuid';
-import Employees from "./Employees";
+import EMPLOYEES from "../../../app/api/employeesData";
 
 function EmployeesAdd() {
     const [name, setName] = useState('');
@@ -20,7 +20,7 @@ function EmployeesAdd() {
         let a = name,
         b = age;
 
-        Employees.push({id: uniqueId, Name: a, Age : b});
+        EMPLOYEES.push({id: uniqueId, Name: a, Age : b});
 
         navigate('/employees');
     }

@@ -2,8 +2,7 @@ import React from 'react';
 import ProjectItem from './ProjectItem';
 import projectRoutes from './projectRoutes';
 import './Projects.css'
-import { Reveal, Image, Container, Icon, Segment, Grid } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import {Container } from 'semantic-ui-react';
 
 export default function Projects() {
 //getting events from event object thats in store
