@@ -5,7 +5,7 @@ import ContactPicker from './ContactPicker';
 import { Formik, Form } from 'formik';
 import MyTextInput from '../../app/common/form/MyTextInput';
 import { Link, useParams } from 'react-router-dom';
-import { updateApp, createApp } from './appActions';
+import { updateApp, createApp } from './contactsRedux/appActions';
 import cuid from 'cuid';
 
 function AppointmentForm({contacts}) {
@@ -26,9 +26,7 @@ function AppointmentForm({contacts}) {
     <Formik
         initialValues={initialValues}
         onSubmit={(values) => {
-            selectedApp
-        ? dispatch(updateApp({...selectedApp, ...values})) 
-        : dispatch(createApp({
+            dispatch(createApp({
             ...values, 
             id: cuid(), 
         }));

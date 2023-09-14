@@ -63,7 +63,7 @@ function HomeDashboard() {
         className="panel" 
         style={{backgroundImage: "url(/assets/images/music.jpg)"}}
         >
-        <Link to='hobby'>
+        <Link to='/hobby'>
         <h3 style={{color: 'white'}}>
         Hobby
         <p><Icon name='arrow alternate circle right outline' /></p>

@@ -1,7 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import {Icon, List,Button, Grid} from "semantic-ui-react";
+import {deleteApp} from './contactsRedux/appActions';
 
 export const AppItem = ({ app }) => {
+  const dispatch = useDispatch();
+
     console.log(app)
   return (
         <Grid columns={2} stackable>
@@ -22,10 +26,7 @@ export const AppItem = ({ app }) => {
             </Grid.Column>
             <Button
                     labelPositon='left'
-                    color='green'
-                    size='medium'>Update</Button>
-            <Button
-                    labelPositon='left'
+                    onClick={() => dispatch(deleteApp(app.id))}
                     size='medium'> Delete</Button>
             </Grid>
             

@@ -29,6 +29,7 @@ function NavBar({setFormOpen}) {
         <>
       <Menu.Item as={NavLink} to='/events' name='Events'/>
       <Menu.Item as={NavLink} to='/contacts' name='Contacts'/>
+      <Menu.Item as={NavLink} to='/budgetTracker' name='Budget Tracker'/>
       <Menu.Item as={NavLink} to='/createEvent'>
         <Button positive inverted content='Add Event' />
       </Menu.Item>

@@ -1,5 +1,5 @@
-import {contactData} from '../../app/api/contactData';
-import { CREATE_CONTACT, DELETE_CONTACT, UPDATE_CONTACT } from './contactConstants';
+import {contactData} from '../../../app/api/contactData';
+import { CREATE_CONTACT, DELETE_CONTACT, UPDATE_CONTACT } from '../contactConstants';
 
 const initialState = {
     contacts: contactData

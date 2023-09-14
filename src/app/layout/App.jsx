@@ -2,11 +2,12 @@ import React from 'react';
 import EventDashboard from '../../features/events/eventDashboard/EventDashboard';
 import NavBar from '../../features/nav/NavBar';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import HomePage from '../../features/home/HomePage';
+import IntroPage from '../../features/introPage/IntroPage';
 import EventDetailedPage from '../../features/events/eventDetailed/EventDetailedPage';
 import EventForm from '../../features/events/eventForm/EventForm';
 import ContactsPage from '../../features/contacts/ContactsPage';
-import HomeDashboard from '../../features/dashboard/HomeDashboard';
+import BudgetTracker from '../../features/budgetTracker/BudgetTracker';
+import HomeDashboard from '../../features/homeDashboard/HomeDashboard';
 import ContactForm from '../../features/contacts/ContactForm';
 import Projects from '../../features/projects/Projects';
 import InvestCalc from '../../features/projects/investCalc/InvestCalc';
@@ -25,10 +26,11 @@ function App() {
     <>
     {pathname !== '/' && <NavBar />}
     <Routes>
-    <Route exact path='/' element={<HomePage/>}/>
+    <Route exact path='/' element={<IntroPage/>}/>
     <Route exact path='/home' element={<HomeDashboard/>}/>
     <Route path='/events' element={<EventDashboard />}/>
     <Route path='/contacts' element={<ContactsPage/>}/>
+    <Route path='/budgetTracker' element={<BudgetTracker/>}/>
     <Route path='/projects' element={<Projects />}/>
     <Route path='/invest' element={<InvestCalc /> }/>
     <Route path='/userapp' element={<UserApp />}/>
