@@ -10,12 +10,20 @@
     background-size: cover;
 }
 
+.temp h1 {
+  font-size: 5rem;
+}
+.description p {
+  font-size: 4rem;
+}
+
 .location p {
-    font-size: 1.6rem;
+    font-size: 10rem;
 }
 
 .location h1 {
-    font-size: 6rem;
+    font-size: 10rem;
+    left: 20;
 }
 
 .weather {
@@ -39,19 +47,21 @@
 .weather .search {
   text-align: center;
   padding: 1rem;
+  left: 20;
 }
 
 .weather input {
-  padding: .7rem 1.5rem;
+  display: block;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 50px;
   border: 1px solid rgba(255,255,255, 0.8);
   background: rgba(255,255,255, 0.1);
   color: #f8f8f8;
   text-align: center;
   margin: auto;
   top: 200px;
-  left: 50%;
+  left: 10;
+  width: 50%;
 }
 
 ::placeholder {
@@ -68,6 +78,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: large;
   }
   
   .weather .top {

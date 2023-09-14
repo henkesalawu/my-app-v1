@@ -1,5 +1,5 @@
 import React from 'react';
-import Music from './music/Music';
+import MusicPlayer from './musicPage/MusicPlayer';
 import { Container, Segment } from 'semantic-ui-react';
 
 function Hobby() {
@@ -8,7 +8,7 @@ function Hobby() {
 <Container className='main'>
 <Segment.Group>
 <Segment >
-<Music />
+<MusicPlayer />
 </Segment>
 <Segment>
 </Segment>
