@@ -8,7 +8,7 @@ function SignedInMenu({signOut}) {
     <div>
       <Menu.Item position='right'>
         <Image avatar spaced='right' src='/assets/user.png' />
-        <Dropdown pointing='top left' text='Bob'>
+        <Dropdown pointing='top left' text='User'>
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to='/createEvent' text='Create Event' icon='plus' />
                 <Dropdown.Item as={Link} to='/about' text='My Profile' icon='user' />
