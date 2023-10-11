@@ -5,6 +5,9 @@ import contactReducer from '../../features/contacts/contactsRedux/contactReducer
 import appReducer from '../../features/contacts/contactsRedux/appReducer';
 import transactionReducer from '../../features/budgetTracker/budgetRedux/transactionsSlice';
 import budgetsReducer from '../../features/budgetTracker/budgetRedux/budgetsSlice';
+import topicsReducer from '../../features/projects/quizzCreator/features/topics/topicsSlice';
+import quizzesReducer from '../../features/projects/quizzCreator/features/quizzes/quizzesSlice';
+import cardsReducer from '../../features/projects/quizzCreator/features/cards/cardsSlice';
 
 const rootReducer = combineReducers({
     test: testReducer,
@@ -12,7 +15,10 @@ const rootReducer = combineReducers({
     contact: contactReducer,
     app: appReducer,
     transactions: transactionReducer,
-    budgets: budgetsReducer
+    budgets: budgetsReducer,
+    topics: topicsReducer,
+    quizzes: quizzesReducer,
+    cards: cardsReducer
 })
 
 export default rootReducer;

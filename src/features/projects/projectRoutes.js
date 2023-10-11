@@ -3,8 +3,8 @@ const projectRoutes ={
     USERAPP: "/userapp",
     EXPENSES: "/expenses",
     WEATHER: '/weather',
-    EMPLOYEES: '/employees'
-
+    EMPLOYEES: '/employees',
+    QUIZ: '/quizApp'
 };
 
 export default projectRoutes;

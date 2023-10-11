@@ -24,6 +24,7 @@ export default function Projects() {
               text='User App'
               path={projectRoutes.USERAPP}
             />
+         
             </ul>
             <ul className='cards__items'>
             <ProjectItem
@@ -42,6 +43,14 @@ export default function Projects() {
               path={projectRoutes.EMPLOYEES}
               />
               </ul>
+              <ul className='cards__items'>
+            <ProjectItem
+              src='assets/images/quizz.png'
+              text='Quizz Creator App'
+              path={projectRoutes.QUIZ}
+            />
+            </ul>
+              
         </div>
       </div>
     </div>

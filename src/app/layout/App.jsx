@@ -18,6 +18,20 @@ import EmployeesApp from '../../features/projects/employees/EmployeesApp';
 import EmployeesAdd from '../../features/projects/employees/EmployeesAdd';
 import EmployeesEdit from '../../features/projects/employees/EmployeesEdit';
 import Hobby from '../../features/projects/hobby/Hobby';
+import QuizApp from '../../features/projects/quizzCreator/app/QuizApp';
+import Topics from '../../features/projects/quizzCreator/features/topics/Topics';
+import Topic from '../../features/projects/quizzCreator/features/topics/Topic';
+import Quiz from '../../features/projects/quizzCreator/features/quizzes/Quiz';
+import Quizzes from '../../features/projects/quizzCreator/features/quizzes/Quizzes';
+import QuizForm from '../../features/projects/quizzCreator/components/QuizForm';
+import TopicForm from '../../features/projects/quizzCreator/components/TopicForm';
+
+
+
+
+
+
+
 
 function App() {
   const {key, pathname} = useLocation();
@@ -47,6 +61,13 @@ function App() {
     <Route path='/manage/:id' element={<EventForm/>} key={key}/>
     <Route path='/update/:id' element={<ContactForm/>} key={key}/>
     <Route path='/addContact' element={<ContactForm />}/>
+    <Route path='/quizApp' element={<QuizApp/>}/>
+    <Route path='/quizApp/topics' element={<Topics/>}/>
+    <Route path="/quizApp/topics/new" element={<TopicForm/>}/>
+    <Route path="/quizApp/topics/:topicId" element={<Topic/>}/>
+    <Route path="/quizApp/quizzes" element={<Quizzes/>}/>
+    <Route path="/quizApp/quizzes/new" element={<QuizForm/>}/>
+    <Route path="/quizApp/quizzes/:quizId" element={<Quiz/>}/>
 
     </Routes>
    </>
