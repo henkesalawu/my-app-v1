@@ -23,6 +23,7 @@ function Hobby() {
 </Grid>
 </Segment>
 <Segment textAlign='center'>
+<h2>My favorite artists:</h2>
 </Segment>
 <Segment>
 </Segment>
